@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap');
+
+:root {
+	--main-color: #8c6fc2;
+	--background-color: #f1f1f1;
+
+	/* fonts */
+	--text-color: #9c9c9c;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto Mono', sans-serif;
+}
+
+body {
+	background-color: var(--background-color);
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+.app {
+	position: relative;
+	width: inherit;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* login ############################################################## */
+/* login ############################################################## */
+/* login ############################################################## */
+
+.extra {
+	align-self: center;
+	margin-top: 25px;
+	font-size: 12px;
+	font-weight: lighter;
+	color: var(--text-color);
+	opacity: 0.8;
+	transition: 0.1s;
+}
+
+.extra a {
+	color: var(--main-color);
+	font-weight: bold;
+	opacity: 0.8;
+	transition: 0.1s;
+}
+
+.extra a:hover {
+	opacity: 1;
+}
+
+/* applications ############################################################## */
+/* applications ############################################################## */
+/* applications ############################################################## */
+
+.applications ul {
+	list-style: none;
+}
+
+.applications ul li {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 20px;
+	margin: 25px 0;
+}
+
+.applications ul li .app-name {
+	flex-grow: 1;
+	font-size: 16px;
+	font-weight: bold;
+	color: var(--text-color);
+}
+
+.applications ul li .active-app {
+	padding: 4px 10px;
+	border: none;
+	border-radius: 3px;
+	background-color: var(--main-color);
+	color: var(--background-color);
+}
+
+.applications ul li label {
+	position: relative;
+	display: flex;
+	place-items: center;
+	height: 10px;
+	padding: 1px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.applications ul li > button {
+	color: var(--main-color);
+	font-weight: bold;
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.applications ul li > button:hover {
+	opacity: 0.8;
+}
+
+.dropdown {
+	position: relative;
+}
+
+.fa-angle-down {
+	font-size: 20px;
+	opacity: 0.3;
+	z-index: 3;
+}
+
+.dropdown {
+	position: absolute;
+	top: 20px;
+	right: -55px;
+	border: none;
+	border-radius: 3px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 120px;
+	height: 60px;
+	background-color: var(--background-color);
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+	z-index: 3;
+}
+
+.dropdown button {
+	color: var(--text-color);
+	font-weight: bold;
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+	width: 100%;
+	height: 30px;
+}
+
+.dropdown button:hover {
+	background-color: rgba(0, 0, 0, 0.06);
+}
+
+input[type='checkbox'] {
+	display: block;
+}
+
+/* navbar ############################################################## */
+/* navbar ############################################################## */
+/* navbar ############################################################## */
+
+.tweet-options {
+	width: 100vw;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 20px;
+}
+
+.tweet-options .active-tab {
+	opacity: 1;
+}
+
+.tweet-options a {
+	margin: 10px 30px 10px 0;
+}
+
+.tweet-options p {
+	margin: 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: var(--text-color);
+	opacity: 0.5;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.tweet-options p:hover {
+	opacity: 1;
+}
+
+.tweet-options .user-info {
+	position: relative;
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 95px;
+}
+
+.tweet-options .user-info .username {
+	margin-right: 10px;
+}
+
+.tweet-options .user-info svg {
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
+}
+
+.tweet-options .user-info .dropdown {
+	top: 25px;
+	right: 50px;
+	height: auto;
+	width: 80px;
+}
+
+/* app ############################################################## */
+/* app ############################################################## */
+/* app ############################################################## */
+
+form {
+	padding: 30px;
+	border: none;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	min-height: 300px;
+	min-width: 500px;
+}
+
+form .tweet-action {
+	color: var(--main-color);
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+form input {
+	padding-left: 3px;
+	margin: 5px 0;
+	height: 40px;
+	width: 100%;
+	font-weight: bold;
+	font-size: 16px;
+	color: var(--main-color);
+	background-color: var(--background-color);
+	border: none;
+	outline: none;
+	position: relative;
+	transition: all ease-in 0.15s;
+	border-bottom: 2px solid transparent;
+}
+
+form input::placeholder {
+	color: var(--text-color);
+	opacity: 0.6;
+}
+
+form input:focus {
+	border-bottom: 2px solid var(--main-color);
+}
+
+input[type='submit'] {
+	margin-top: 10px;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	font-size: 16px;
+	color: var(--background-color);
+	background-color: var(--main-color);
+	cursor: pointer;
+	outline: none;
+	transition: all 0.2s;
+}
+
+input[type='submit']:hover {
+	background-color: rgb(125, 98, 173);
+}
+
+.hide {
+	display: none;
+}
+
+@keyframes fade-out {
+	0% {
+		transform: translateY(-10px);
+	}
+	30% {
+		transform: translateY(-100px);
+	}
+
+	100% {
+		transform: translateY(400%);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		transform: translateY(400%);
+	}
+	30% {
+		transform: translateY(-100px);
+	}
+	55% {
+		transform: translateY(-2px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

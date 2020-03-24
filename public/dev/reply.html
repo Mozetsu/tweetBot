@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<div class="app">
+			<div class="tweet-options">
+				<a href="http://127.0.0.1:5500/public/dev/index.html">
+					<p class="setup-tokens">Login</p>
+				</a>
+				<a href="http://127.0.0.1:5500/public/dev/apps.html">
+					<p class="setup-tokens">Apps</p>
+				</a>
+				<a href="http://127.0.0.1:5500/public/dev/tweet.html">
+					<p class="new-tweet">Tweet</p>
+				</a>
+				<a href="http://127.0.0.1:5500/public/dev/reply.html">
+					<p class="reply-tweet active-tab">Reply</p>
+				</a>
+			</div>
+
+			<form class="reply-form">
+				<p class="tweet-action">Reply to tweets 😃</p>
+				<input type="text" class="tweet-id" placeholder="Tweet ID" />
+				<input type="text" class="tweet-author" placeholder="@Username" />
+				<input type="text" class="tweet-text" placeholder="Write a reply..." />
+				<input type="submit" class="send-tweet-reply" value="Reply" />
+			</form>
+
+			<script src="client.js"></script>
+		</div>
+	</body>
+</html>
