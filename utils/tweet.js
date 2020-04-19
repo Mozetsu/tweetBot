@@ -1,5 +1,5 @@
 const Twitter = require('twitter');
-const auth = require('../config/CodeMozAuth');
+const auth = require('../config/GhownAuth');
 
 // API auth
 const T = new Twitter(auth);

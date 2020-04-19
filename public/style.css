@@ -76,7 +76,7 @@ a {
 
 .applications ul li .app-name {
 	flex-grow: 1;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold;
 	color: var(--text-color);
 }
@@ -231,6 +231,11 @@ form {
 	display: flex;
 	flex-direction: column;
 	min-height: 300px;
+	min-width: 350px;
+}
+
+.tweet-form,
+.reply-form {
 	min-width: 500px;
 }
 
