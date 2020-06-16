@@ -1,8 +1,8 @@
-const Twit = require('twit');
+const Twitter = require('twitter');
 const auth = require('../config/GhownAuth');
 
 // API auth
-const T = new Twit(auth);
+const T = new Twitter(auth);
 
 // callback
 const tweeted = (err, data, response) => {
@@ -16,8 +16,12 @@ const newTweet = (tweet) => {
 };
 
 // reply to tweets
-const replyTweet = (tweetID, username, reply) => {
-	T.post('statuses/update', { in_reply_to_status_id: tweetID, status: `@${username} ${reply}` }, tweeted);
+const replyTweet = (tweetID, reply) => {
+	T.post(
+		'statuses/update',
+		{ in_reply_to_status_id: tweetID, auto_populate_reply_metadata: true, status: reply },
+		tweeted
+	);
 };
 
 module.exports = {

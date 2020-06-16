@@ -8,7 +8,7 @@ const dropdownBtn = document.querySelector('.dropdown-arrow');
 // checks if tweet form exists
 if (tweetForm) {
 	// new tweet
-	tweetForm.addEventListener('submit', e => {
+	tweetForm.addEventListener('submit', (e) => {
 		// prevents window reload
 		e.preventDefault();
 
@@ -17,13 +17,13 @@ if (tweetForm) {
 		if (!tweet) return console.log('Fields missing!');
 		else {
 			fetch(`/make-tweet?tweet=${tweet}`)
-				.then(response => {
-					response.json().then(data => console.log(data));
+				.then((response) => {
+					response.json().then((data) => console.log(data));
 
 					// clear input field
 					document.querySelector('.new-tweet-text').value = '';
 				})
-				.catch(err => console.log(err));
+				.catch((err) => console.log(err));
 		}
 	});
 }
@@ -31,39 +31,38 @@ if (tweetForm) {
 // checks if reply form exists
 if (replyForm) {
 	// send reply
-	replyForm.addEventListener('submit', e => {
+	replyForm.addEventListener('submit', (e) => {
 		// prevents window reload
 		e.preventDefault();
 
 		// get input values
 		const tweetID = document.querySelector('.tweet-id').value;
-		const username = document.querySelector('.tweet-author').value;
+		// const username = document.querySelector('.tweet-author').value;
 		const tweet = document.querySelector('.tweet-text').value;
 
-		if (!tweetID || !username || !tweet) return console.log('Fields missing!');
+		if (!tweetID || !tweet) return console.log('Fields missing!');
 		else {
-			fetch(`/reply-tweet?tweetID=${tweetID}&&username=${username}&&tweet=${tweet}`)
-				.then(response => {
-					response.json().then(data => console.log(data));
+			fetch(`/reply-tweet?tweetID=${tweetID}&&tweet=${tweet}`)
+				.then((response) => {
+					response.json().then((data) => console.log(data));
 
 					// clear input fields
 					document.querySelector('.tweet-id').value = '';
-					document.querySelector('.tweet-author').value = '';
 					document.querySelector('.tweet-text').value = '';
 				})
-				.catch(err => console.log(err));
+				.catch((err) => console.log(err));
 		}
 	});
 }
 
-const showDropdown = item => {
+const showDropdown = (item) => {
 	const relativeDropdown = item.parentElement.parentElement.children[3];
 
 	if (!relativeDropdown.classList[1]) {
 		relativeDropdown.classList.add('hide');
 	} else {
 		// closes all opened dropdowns
-		document.querySelectorAll('.dropdown').forEach(e => e.classList.add('hide'));
+		document.querySelectorAll('.dropdown').forEach((e) => e.classList.add('hide'));
 
 		// // open current dropdown
 		relativeDropdown.classList.remove('hide');
@@ -71,9 +70,9 @@ const showDropdown = item => {
 };
 
 // mouse click handler
-window.onmouseup = e => {
+window.onmouseup = (e) => {
 	if (!e.target.matches('.drop-svg') || !e.target.matches('.drop-path')) {
-		document.querySelectorAll('.dropdown').forEach(e => {
+		document.querySelectorAll('.dropdown').forEach((e) => {
 			e.classList.add('hide');
 		});
 	}
