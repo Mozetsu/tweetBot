@@ -4,27 +4,13 @@ const auth = require('../config/GhownAuth');
 // API auth
 const T = new Twitter(auth);
 
-// callback
-const tweeted = (err, data, response) => {
-	if (err) console.log('Something went wrong!', err);
-	else console.log('Completed!');
+const result = (error, data, response) => {
+	if (error) return console.log({ error });
+	console.log('Success!');
 };
 
-// make tweets
-const newTweet = (tweet) => {
-	T.post('statuses/update', { status: tweet }, tweeted);
-};
+const tweet = (tweet) => T.post('statuses/update', { status: tweet }, result);
 
-// reply to tweets
-const replyTweet = (tweetID, reply) => {
-	T.post(
-		'statuses/update',
-		{ in_reply_to_status_id: tweetID, auto_populate_reply_metadata: true, status: reply },
-		tweeted
-	);
-};
-
-module.exports = {
-	newTweet,
-	replyTweet,
+const reply = (id, reply) => {
+	T.post('statuses/update', { in_reply_to_status_id: id, auto_populate_reply_metadata: true, status: reply }, result);
 };
