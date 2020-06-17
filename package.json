@@ -5,12 +5,14 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
-		"dev": "nodemon index.js -e js,handlebars,html,css"
+		"dev": "nodemon index.js -e js,handlebars,html,css",
+		"tweet": "node -r dotenv/config ./utils/tweet.js"
 	},
 	"keywords": [],
 	"author": "Mozetsu",
 	"license": "ISC",
 	"dependencies": {
+		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"express-handlebars": "^3.1.0",
 		"twitter": "^1.7.1"
