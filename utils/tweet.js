@@ -12,8 +12,10 @@ const result = (error, data, response) => {
 
 const tweet = (tweet) => T.post('statuses/update', { status: tweet }, result);
 
+const retweet = (id) => T.post(`statuses/retweet/${id}`, result);
+
 const reply = (id, reply) => {
 	T.post('statuses/update', { in_reply_to_status_id: id, auto_populate_reply_metadata: true, status: reply }, result);
 };
 
-reply('1273312848022831104', "forgot the -D flag");
+retweet('1267703699729780736');
