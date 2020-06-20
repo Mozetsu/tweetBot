@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon index.js -e js,handlebars,html,css",
-		"tweet": "node -r dotenv/config ./utils/tweet.js"
+		"tweet": "node utils/tweet.js"
 	},
 	"keywords": [],
 	"author": "Mozetsu",

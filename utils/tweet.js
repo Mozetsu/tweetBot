@@ -1,4 +1,4 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const Twitter = require('twitter');
 const auth = require('../config/tokens');
 
@@ -11,6 +11,7 @@ const result = (error, data, response) => {
 };
 
 const tweet = (tweet) => T.post('statuses/update', { status: tweet }, result);
+tweet('Pumpkin slayer ⚔');
 
 // const retweet = (id) => T.post(`statuses/retweet/${id}`, result);
 const retweet = (id) => T.post(`statuses/retweet/${id}`, result);
