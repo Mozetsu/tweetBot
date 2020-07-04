@@ -1,5 +1,6 @@
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-const Twitter = require('twitter');
+// if (process.env.NODE_ENV !== 'production')
+require('dotenv').config();
+const Twitter = require('twitter-lite');
 const auth = require('../config/tokens');
 
 // API auth
@@ -10,10 +11,16 @@ const result = (error, data, response) => {
 	console.log('Success!');
 };
 
-const tweet = (tweet) => T.post('statuses/update', { status: tweet }, result);
-tweet('Pumpkin slayer ⚔');
+const search = (username) => T.get('users/show', { screen_name: username }, result);
 
-// const retweet = (id) => T.post(`statuses/retweet/${id}`, result);
+const fetchUser = async (usr) => {
+	const user = await search(usr);
+	console.log(user);
+};
+// fetchUser('Mozetsu');
+
+const tweet = (tweet) => T.post('statuses/update', { status: tweet }, result);
+
 const retweet = (id) => T.post(`statuses/retweet/${id}`, result);
 const favorite = (id) => T.post(`favorites/create`, { id }, result);
 
