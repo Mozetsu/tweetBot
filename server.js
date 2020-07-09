@@ -2,13 +2,13 @@ const { tweet, retweet, favorite, reply, result, fetchUser } = require('./utils/
 const fetch = require('node-fetch');
 var fs = require('fs');
 
-const interval = 1000 * 60 * 30; // 30 minutes
+// tweet on start
+tweetRandomFact();
+
+const interval = 1000 * 3600 * 3; // 3 hours
 
 setInterval(tweetRandomFact, interval);
 
-// dad jokes
-// const response = await fetch('https://icanhazdadjoke.com', { headers: { Accept: 'text/plain' } });
-// const text = await response.text();
 async function tweetRandomFact() {
 	try {
 		// parse json file into a variable

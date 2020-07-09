@@ -1,0 +1,3 @@
+// dad jokes
+// const response = await fetch('https://icanhazdadjoke.com', { headers: { Accept: 'text/plain' } });
+// const text = await response.text();
