@@ -1,6 +1,6 @@
-# Project TW1
+# Tweet Bot
 
-Tweet using a different app.
+Simple Twitter bot that consumes API's and tweets the response.
 
 ## config example
 

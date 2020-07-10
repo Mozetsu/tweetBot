@@ -1,4 +1,4 @@
-const { tweet, retweet, favorite, reply, result, fetchUser } = require('./utils/twitter');
+const { tweet } = require('./utils/twitter');
 const fetch = require('node-fetch');
 var fs = require('fs');
 
