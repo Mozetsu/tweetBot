@@ -1,5 +1,5 @@
 {
-	"name": "tweeply",
+	"name": "tweetbot",
 	"version": "1.0.0",
 	"description": "",
 	"main": "server.js",
@@ -9,7 +9,7 @@
 	},
 	"keywords": [],
 	"author": "Mozetsu",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"node-fetch": "^2.6.0",
 		"twitter-lite": "^0.14.0"
