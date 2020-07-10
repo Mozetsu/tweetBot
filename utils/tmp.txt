@@ -1,3 +1,30 @@
+ API's  ------------------------------------------------------------------------------------
 // dad jokes
 // const response = await fetch('https://icanhazdadjoke.com', { headers: { Accept: 'text/plain' } });
 // const text = await response.text();
+
+ Twitter methods ------------------------------------------------------------------------------------
+
+// const retweet = (id) => Twitter.post(`statuses/retweet/${id}`, result);
+
+// const favorite = (id) => Twitter.post(`favorites/create`, { id }, result);
+
+// const reply = (id, reply) => {
+// 	Twitter.post(
+// 		'statuses/update',
+// 		{ in_reply_to_status_id: id, auto_populate_reply_metadata: true, status: reply },
+// 		result
+// 	);
+// };
+
+// const search = (username) => Twitter.get('users/show', { screen_name: username }, result);
+
+// const fetchUser = async (usr) => {
+// 	const user = await search(usr);
+// 	console.log(user);
+// };
+
+// Twitter.stream('statuses/filter', { track: 'javascript' }, (stream) => {
+// 	stream.on('data', (tweet) => console.log(tweet));
+// 	stream.on('error', (error) => console.log(error));
+// });

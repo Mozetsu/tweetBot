@@ -1,9 +1,6 @@
-const { tweet } = require('./utils/twitter');
+const { tweet, result } = require('./utils/twitter');
 const fetch = require('node-fetch');
 var fs = require('fs');
-
-// tweet on start
-tweetRandomFact();
 
 const interval = 1000 * 3600 * 3; // 3 hours
 
@@ -23,9 +20,9 @@ async function tweetRandomFact() {
 
 		// save fact id on json file
 		database.ids.push(id);
-		await fs.writeFile('./utils/database.json', JSON.stringify(database), (err, data) => {
-			if (err) return console.log({ err });
-		});
+		await fs.writeFile('./utils/database.json', JSON.stringify(database), result);
+
+
 
 		// tweet
 		await tweet(text);
