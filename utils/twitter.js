@@ -18,7 +18,7 @@ async function tweetRandomFact() {
 		const database = JSON.parse(fs.readFileSync('./utils/database.json'));
 
 		// fetch random fact
-		const response = await fetch('https://uselessfacts.jsph.pl//random.json?language=en');
+		const response = await fetch('https://uselessfacts.jsph.pl/random.json?language=en');
 		const { id, text } = await response.json();
 
 		// if fact already tweeted, get new one

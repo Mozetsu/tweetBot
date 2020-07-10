@@ -1,16 +1,15 @@
 const { tweetRandomFact } = require('./utils/twitter');
 const express = require('express');
 const app = express();
+const databaseRoute = require('./routes/database');
 const PORT = process.env.PORT;
-const interval = 1000 * 30; // 3 hours
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-	res.sendFile(`${__dirname}/utils/database.json`);
-});
+app.use('/', databaseRoute);
 
-// setInterval(tweetRandomFact, interval);
+const interval = 1000 * 3600 * 3; // 3 Hours
+setInterval(() => tweetRandomFact(), interval);
 
 app.listen(PORT, () => console.log(`// ${PORT}`));
