@@ -22,8 +22,6 @@ async function tweetRandomFact() {
 		database.ids.push(id);
 		await fs.writeFile('./utils/database.json', JSON.stringify(database), result);
 
-
-
 		// tweet
 		await tweet(text);
 	} catch (err) {
