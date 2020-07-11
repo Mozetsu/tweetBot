@@ -1,8 +1,9 @@
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-const fetch = require('node-fetch');
 const fs = require('fs');
+const fetch = require('node-fetch');
 const TwitterLite = require('twitter-lite');
 const auth = require('../config/auth');
+const { scrapeSpotify } = require('./spotify');
 
 const Twitter = new TwitterLite(auth);
 
@@ -35,4 +36,36 @@ async function tweetRandomFact() {
 	}
 }
 
-module.exports = { tweetRandomFact };
+tweetMostPlayedTrack();
+async function tweetMostPlayedTrack() {
+	try {
+		// get tracks
+		const mostPlayedTracks = await scrapeSpotify();
+
+		// get date
+		const date = new Date();
+		const parsedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+		console.log(parsedDate);
+
+		// parse information to tweet
+		const data = `Spotify - Top 5 (${parsedDate})
+
+									${mostPlayedTracks[0].position} - ${mostPlayedTracks[0].track}, ${mostPlayedTracks[0].author}
+
+									${mostPlayedTracks[1].position} - ${mostPlayedTracks[1].track}, ${mostPlayedTracks[1].author}
+
+									${mostPlayedTracks[2].position} - ${mostPlayedTracks[2].track}, ${mostPlayedTracks[2].author}
+
+									${mostPlayedTracks[3].position} - ${mostPlayedTracks[3].track}, ${mostPlayedTracks[3].author}
+
+									${mostPlayedTracks[4].position} - ${mostPlayedTracks[4].track}, ${mostPlayedTracks[4].author}
+									`;
+
+		// tweet
+		await tweet(data);
+	} catch (err) {
+		console.log(err);
+	}
+}
+
+module.exports = { tweetRandomFact, tweetMostPlayedTrack };
