@@ -9,7 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', databaseRoute);
 
-const interval = 1000 * 3600 * 3; // 3 Hours
-setInterval(() => tweetRandomFact(), interval);
+// const interval = 1000 * 3600 * 3; // 3 Hours
+// setInterval(() => tweetRandomFact(), interval);
+tweetRandomFact();
 
 app.listen(PORT, () => console.log(`// ${PORT}`));
