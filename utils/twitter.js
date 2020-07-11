@@ -44,7 +44,7 @@ async function tweetMostPlayedTrack() {
 
 		// get date
 		const date = new Date();
-		const parsedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+		const parsedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 		console.log(parsedDate);
 
 		// parse information to tweet
@@ -62,7 +62,7 @@ async function tweetMostPlayedTrack() {
 									`;
 
 		// tweet
-		await tweet(data);
+		// await tweet(data);
 	} catch (err) {
 		console.log(err);
 	}
