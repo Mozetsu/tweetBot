@@ -1,7 +1,7 @@
 const CronJob = require('cron').CronJob;
 const amqp = require('amqp-connection-manager');
 
-const AMQP_URL = process.env.CLOUDAMQP_WHITE || 'amqp://localhost';
+const AMQP_URL = process.env.CLOUDAMQP_URL || 'amqp://localhost';
 if (!AMQP_URL) process.exit(1);
 
 const WORKER_QUEUE = 'worker-queue'; // To consume from worker process
@@ -12,7 +12,7 @@ const JOBS = [
 		name: 'Cron process 1',
 		message: { taskName: 'tweetRandomFact', queue: 'worker-queue' }, // message in json format
 		// cronTime: '0 0 10-23/3 * * *', // Every 3h between 10am and 11pm
-		cronTime: '0 /2 11-13 * * *', // Every 2min between 11am and 12pm
+		cronTime: '0 /1 11-13 * * *', // Every 2min between 11am and 12pm
 		repeat: 1,
 	},
 	{
