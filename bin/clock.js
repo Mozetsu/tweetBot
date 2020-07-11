@@ -1,7 +1,7 @@
 const CronJob = require('cron').CronJob;
 const amqp = require('amqp-connection-manager');
 
-const AMQP_URL = process.env.CLOUDAMQP_WHITEE || 'amqp://localhost';
+const AMQP_URL = process.env.CLOUDAMQP_WHITE || 'amqp://localhost';
 if (!AMQP_URL) process.exit(1);
 
 const WORKER_QUEUE = 'worker-queue'; // To consume from worker process
