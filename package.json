@@ -5,7 +5,8 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js",
-		"dev": "nodemon server.js"
+		"dev": "nodemon server.js",
+		"spt": "node routes/spotify.js"
 	},
 	"keywords": [],
 	"author": "Mozetsu",
@@ -13,6 +14,7 @@
 	"dependencies": {
 		"express": "^4.17.1",
 		"node-fetch": "^2.6.0",
+		"osmosis": "^1.1.10",
 		"twitter-lite": "^0.14.0"
 	},
 	"devDependencies": {
