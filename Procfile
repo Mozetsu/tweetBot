@@ -1,3 +1,3 @@
 web:   npm start
-worker: node worker.js
-clock:  node clock.js
+worker: npm worker
+clock:  npm clock
