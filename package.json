@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "server.js",
 	"scripts": {
+		"dev": "nodemon server.js",
 		"start": "node server.js",
 		"worker": "node bin/worker.js",
 		"clock": "node bin/clock.js"

@@ -35,4 +35,4 @@ async function tweetRandomFact() {
 	}
 }
 
-module.exports = { tweetRandomFact };
+exports.tweetRandomFact = tweetRandomFact;
