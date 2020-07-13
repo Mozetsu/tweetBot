@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/tweetRandomFact', (req, res) => {
-	tweetBot.tweetRandomFact();
+  tweetBot.tweetRandomFact();
 	res.status(200).send({ server: 'tweeted!' });
 });
 
