@@ -19,7 +19,7 @@ app.get('/mostPlayedTrack', (req, res) => {
 });
 
 app.get('/database', (req, res) => {
-	res.sendFile(path.join(__dirname + '/../utils/database.json'));
+	res.sendFile(path.join(__dirname + './utils/database.json'));
 });
 
 app.listen(PORT, () => console.log(`// ${PORT}`));
