@@ -4,14 +4,16 @@
 	"description": "",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js",
 		"dev": "nodemon server.js",
+		"start": "node server.js",
 		"spt": "node routes/spotify.js"
 	},
 	"keywords": [],
 	"author": "Mozetsu",
 	"license": "MIT",
 	"dependencies": {
+		"amqp-connection-manager": "^3.2.0",
+		"cron": "^1.8.2",
 		"express": "^4.17.1",
 		"node-fetch": "^2.6.0",
 		"osmosis": "^1.1.10",

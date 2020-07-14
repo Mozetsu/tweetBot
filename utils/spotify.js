@@ -1,6 +1,6 @@
 const osmosis = require('osmosis');
 
-const scrapeSpotify = () => {
+const scrapeSpotify = (length = 5) => {
 	return new Promise((resolve, reject) => {
 		let response;
 		osmosis
@@ -14,10 +14,8 @@ const scrapeSpotify = () => {
 			])
 			.data((arr) => (response = arr))
 			.error((err) => reject(err))
-			.done(() => resolve(response.splice(0, 5)));
+			.done(() => resolve(response.splice(0, length)));
 	});
 };
-
-
 
 module.exports = { scrapeSpotify };

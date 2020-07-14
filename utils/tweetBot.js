@@ -13,7 +13,7 @@ const result = (err, data, response) => {
 
 const tweet = (tweet) => Twitter.post('statuses/update', { status: tweet }, result);
 
-async function tweetRandomFact() {
+async function randomFact() {
 	try {
 		// parse json file into a variable
 		const database = JSON.parse(fs.readFileSync('./utils/database.json'));
@@ -23,7 +23,7 @@ async function tweetRandomFact() {
 		const { id, text } = await response.json();
 
 		// if fact already tweeted, get new one
-		if (database.ids.includes(id)) return tweetRandomFact();
+		if (database.ids.includes(id)) return randomFact();
 
 		// save fact id on json file
 		database.ids.push(id);
@@ -36,8 +36,7 @@ async function tweetRandomFact() {
 	}
 }
 
-tweetMostPlayedTrack();
-async function tweetMostPlayedTrack() {
+async function mostPlayedTrack() {
 	try {
 		// get tracks
 		const mostPlayedTracks = await scrapeSpotify();
@@ -45,7 +44,6 @@ async function tweetMostPlayedTrack() {
 		// get date
 		const date = new Date();
 		const parsedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-		console.log(parsedDate);
 
 		// parse information to tweet
 		const data = `Spotify - Top 5 (${parsedDate})
@@ -62,10 +60,11 @@ async function tweetMostPlayedTrack() {
 									`;
 
 		// tweet
-		// await tweet(data);
+		await tweet(data);
 	} catch (err) {
 		console.log(err);
 	}
 }
 
-module.exports = { tweetRandomFact, tweetMostPlayedTrack };
+exports.randomFact = randomFact;
+exports.mostPlayedTrack = mostPlayedTrack;
