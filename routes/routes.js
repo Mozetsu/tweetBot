@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const tweetBot = require('./utils/tweetBot');
+const tweetBot = require('../utils/tweetBot');
 
 router.get('/randomFact', (req, res) => {
 	tweetBot.randomFact();
