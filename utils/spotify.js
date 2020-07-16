@@ -1,5 +1,6 @@
 const osmosis = require('osmosis');
 
+// scraper
 const scrapeSpotify = (length = 5) => {
 	return new Promise((resolve, reject) => {
 		let response;
