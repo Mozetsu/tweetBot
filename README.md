@@ -2,7 +2,7 @@
 
 Simple Node JS Twitter bot that consumes API's information and tweets the response.
 
-## Setup
+## Local Setup
 
 Create a .env file in the root directory with the following variables and asign each one of them to the tokens provided by Twitter.
 
