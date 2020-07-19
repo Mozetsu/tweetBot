@@ -15,5 +15,5 @@ ACESS_TOKEN_SECRET=...
 
 ## Current features
 
-**Random facts**
-**5 Most played tracks on Spotify (Weekly)**
+- **Random facts**
+- **5 Most played tracks on Spotify (Weekly)**
