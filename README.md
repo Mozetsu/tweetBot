@@ -1,6 +1,6 @@
 # Tweet Bot
 
-Simple Node JS Twitter bot that consumes API's information and tweets the response.
+Simple Node JS Twitter bot that consumes API's and makes tweets.
 
 ## Environment Variables
 
